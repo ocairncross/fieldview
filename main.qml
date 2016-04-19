@@ -33,7 +33,9 @@ ApplicationWindow {
         SliderRound
         {
             Layout.fillWidth : true
+            value: 1.0;
         }
+
         Label {text: "Variable"; font.pixelSize: 18}
         ComboBox
         {
@@ -41,11 +43,21 @@ ApplicationWindow {
             Layout.fillWidth : true;
 
         }
+
         Label {text: "Heat map"; font.pixelSize: 18}
         ComboBox
         {
             model: [ "Jet", "HSV", "Prism" ];
             Layout.fillWidth : true
+        }
+
+		Label {text: "Scalar range:"; font.pixelSize: 18}
+		Labs.RangeSlider
+        {
+            first.handle {implicitWidth: 18; implicitHeight: 18}
+            second.handle {implicitWidth: 18; implicitHeight: 18}
+            first.value: 0.0
+            second.value: 1.0
         }
 
 
