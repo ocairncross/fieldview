@@ -3,14 +3,15 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 1.5
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
+import "D:/qt-opengl/qml/Qt/labs/controls/"
 import Qt.labs.controls 1.0 as Labs
+// import "D:\qt-opengl\qml\Qt\labs\controls\Qt\labs\controls" 1.0 as Labs
 
 ApplicationWindow {
     visible: true
     width: 640
     height: 480
     title: qsTr("Flow Vis")
-
 
     menuBar: MenuBar {
         Menu {
@@ -29,11 +30,16 @@ ApplicationWindow {
     GridLayout {
         id: grid
         columns: 2
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        anchors.top: parent.top
+        anchors.topMargin: 10
+
         Label {text: "Vector scale:"; font.pixelSize: 18}
         SliderRound
         {
-            Layout.fillWidth : true
-            value: 1.0;
+            Layout.fillWidth: true
+            value: 1.0
         }
 
         Label {text: "Variable"; font.pixelSize: 18}
@@ -48,65 +54,36 @@ ApplicationWindow {
         ComboBox
         {
             model: [ "Jet", "HSV", "Prism" ];
-            Layout.fillWidth : true
+            Layout.fillWidth: true
         }
 
 		Label {text: "Scalar range:"; font.pixelSize: 18}
+
 		Labs.RangeSlider
         {
             first.handle {implicitWidth: 18; implicitHeight: 18}
             second.handle {implicitWidth: 18; implicitHeight: 18}
             first.value: 0.0
             second.value: 1.0
+            padding: 0
         }
-
 
     }
 
     ColumnLayout
     {
 
-        // anchors.fill: parent;
-        anchors.bottom: parent.bottom;
-        anchors.left: parent.left;
-        anchors.right: parent.right;
-        Layout.fillWidth: true;
-
-        Label
-        {
-            // anchors.leftMargin : 100;
-            text: "Vector Scale"
-        }
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 10
+        Layout.fillWidth: true
 
         SliderRound
         {
-            value: 0.5
-        }
-
-
-
-        Labs.RangeSlider
-        {
-
-            first.handle
-            {
-                implicitWidth: 18
-                implicitHeight: 18
-            }
-
-            second.handle
-            {
-                implicitWidth: 18
-                implicitHeight: 18
-            }
-
-            first.value: 0.25
-            second.value: 0.75
-        }
-
-        SliderRound
-        {
-            Layout.fillWidth: true;
+            Layout.fillWidth: true;            
             value: 0.75
         }
 
