@@ -45,15 +45,14 @@ ApplicationWindow {
         Label {text: "Variable"; font.pixelSize: 18}
         ComboBox
         {
-            model: [ "Temperature", "Salinity", "Pressure" ];
-            Layout.fillWidth : true;
-
+            model: ["Temperature", "Salinity", "Pressure" ]
+            Layout.fillWidth : true
         }
 
         Label {text: "Heat map"; font.pixelSize: 18}
         ComboBox
         {
-            model: [ "Jet", "HSV", "Prism" ];
+            model: ["Jet", "HSV", "Prism"]
             Layout.fillWidth: true
         }
 
