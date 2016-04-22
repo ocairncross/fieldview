@@ -5,14 +5,13 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
 import "D:/qt-opengl/qml/Qt/labs/controls/"
 import Qt.labs.controls 1.0 as Labs
-// import "D:\qt-opengl\qml\Qt\labs\controls\Qt\labs\controls" 1.0 as Labs
 
-ApplicationWindow {
-    visible: true
-    width: 640
+Item {
+	anchors.fill: parent
+	width: 640
     height: 480
-    title: qsTr("Flow Vis")
 
+	/*
     menuBar: MenuBar {
         Menu {
             title: qsTr("File")
@@ -26,6 +25,8 @@ ApplicationWindow {
             }
         }
     }
+	*/
+	
 
     GridLayout {
         id: grid
